@@ -1,0 +1,10 @@
+const express = require('express');
+const vehicleController = require('../controllers/vehicleControl');
+const orgController = require('../controllers/orgController');
+const router = express.Router();
+router.post('/vehicles', vehicleController.addVehicle);
+router.get('/vehicles/:vin', vehicleController.getVehicle);
+router.post('/orgs', orgController.createOrg);
+router.patch('/orgs/:id', orgController.updateOrg);
+router.get('/orgs', orgController.getAllOrgs);
+module.exports = router;
